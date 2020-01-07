@@ -5,9 +5,9 @@ import Toolbar from '../Toolbar/Toolbar';
 import {Route} from 'react-router-dom';
 import Home from '../Home/Home';
 import Interbanking from '../Interbanking/Interbanking'
-import Cheques from '../../Containers/Cheques/Cheques';
-import Cuentas from '../../Containers/Cuentas/Cuentas';
-import Transferencias from '../../Containers/Transferencias/Transferencias';
+import Cheques from '../../containers/Cheques/Cheques';
+import Cuentas from '../../containers/Cuentas/Cuentas';
+import Transferencias from '../../containers/Transferencias/Transferencias';
 import Listado from '../Listado/Listado';
 const layout = (props) =>(
   <div>

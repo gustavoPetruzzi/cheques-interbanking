@@ -15,17 +15,37 @@ El proyecto consiste en:
 
 ## Como usar este proyecto
  ---
- ### Prerequisitos
+### Prerequisitos
 
-  1. #### Descargar este proyecto
+1. #### Descargar este proyecto
 
-    git clone https://github.com/gustavoPetruzzi/cheques-interbanking.git
+    #### `git clone https://github.com/gustavoPetruzzi/cheques-interbanking.git`
   
-  2. #### Desde el directorio raiz
+2. #### Desde el directorio raiz
 
-    Ejecutar `npm install`
+    ####  `npm install`
 
 ### Usar el proyecto en "development mode"
+
+
+#### `npm start`
+
+Desde https://localhost:3000 en tu navegador podras ver la aplicacion en funcionamiento.
+
+
+
+### Despliegue
+
+#### `npm run build`
+
+Construye la aplicacion para produccíon.
+
+
+
+
+# [Click aquí para probar la aplicación ](https://interbanking.netlify.com/)
+
+
 
   
 
