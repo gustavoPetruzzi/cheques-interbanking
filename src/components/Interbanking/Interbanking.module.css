@@ -1,4 +1,13 @@
 .Interbanking{
     display:flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 600px) {
+    .Interbanking {
+        justify-content: center;
+        flex-direction: row;
+    }
 }

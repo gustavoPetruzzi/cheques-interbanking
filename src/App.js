@@ -9,10 +9,10 @@ import {Route} from 'react-router-dom';
 import Home from './components/Home/Home';
 import Interbanking from './components/Interbanking/Interbanking';
 
-import Cheques from './Containers/Cheques/Cheques';
+import Cheques from './containers/Cheques/Cheques';
 
-import Cuentas from './Containers/Cuentas/Cuentas';
-import Transferencias from './Containers/Transferencias/Transferencias';
+import Cuentas from './containers/Cuentas/Cuentas';
+import Transferencias from './containers/Transferencias/Transferencias';
 import Listado from './components/Listado/Listado';
 function App() {
   return (
@@ -33,8 +33,4 @@ function App() {
 
 export default App;
 
-/*
-<div className="App">
-        <Layout/>
-</div>
-*/
+

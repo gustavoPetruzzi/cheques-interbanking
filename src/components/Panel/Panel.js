@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 const panel = (props) =>(
   <div className={classes.Panel}>
     <div className={classes.Title}>
-      <h2> { props.title  }</h2>
+      <h2 className={classes.Text}> { props.title  }</h2>
     </div>
     <div className={classes.Body}>
       {props.children}
