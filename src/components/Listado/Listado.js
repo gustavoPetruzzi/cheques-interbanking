@@ -4,6 +4,7 @@ import classes from './Listado.module.css';
 import Table from 'react-bootstrap/Table';
 import { connect } from 'react-redux';
 const listado = (props) =>{
+    console.log(props.ers);
     let cabecera = null;
     let listado = null;
     if(props.match.params.tipo === 'cuentas'){
@@ -20,10 +21,10 @@ const listado = (props) =>{
                 .map(error =>{
                     return(
                         <tr key={Math.random()} >
-                            <td>{error.cbu}</td>
-                            <td>{error.denominacion}</td>
-                            <td>{error.cuit}</td>
-                            <td>{error.error}</td>
+                            <td>{error[0]}</td>
+                            <td>{error[1]}</td>
+                            <td>{error[2]}</td>
+                            <td>{error[3]}</td>
                         </tr>
                     )
                 })
@@ -63,10 +64,10 @@ const listado = (props) =>{
             .map(error =>{
                 return(
                     <tr key={Math.random()} >
-                        <td>{error.cbu}</td>
-                        <td>{error.importe}</td>
-                        <td>{error.fila}</td>
-                        <td>{error.error}</td>
+                        <td>{error[0]}</td>
+                        <td>{error[1]}</td>
+                        <td>{error[2]}</td>
+                        <td>{error[3]}</td>
                     </tr>
                 )
             })

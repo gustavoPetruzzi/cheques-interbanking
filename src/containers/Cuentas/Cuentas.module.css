@@ -7,18 +7,12 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 20%;
-    
-}
-
-.Form{
-    width: 70%;
-    
 }
  /* INPUT */
 .Input{
     width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
+    box-sizing: border-box; 
+    
 }
 .Label{
     font-weight: bold;
@@ -47,6 +41,12 @@
 .Button{
     margin-bottom: 10%;
     margin-top: 15%;
+}
+
+@media (max-width: 600px) {
+    .Form {
+        width: 79%;
+    }
 }
 
 

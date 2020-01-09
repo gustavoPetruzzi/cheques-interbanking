@@ -107,7 +107,7 @@ class Transferencias extends Component{
                     {info}
                 </Modal>
                 <div className={classes.Principal}>
-                    <form>
+                    <form className={classes.Form}>
                         <div className={classes.Input} >
                             <label className={classes.Label}>Cbu</label>
                             <input type="text" className={classes.InputElement} value={this.state.cbu} onChange={(event) => this.setState({cliente: event.target.value})} />

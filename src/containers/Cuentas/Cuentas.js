@@ -32,7 +32,7 @@ class Cuentas extends Component{
         this.setState({cargando: true});
         axios.post('/generarAltaCuenta', formData)
             .then(response =>{
-                
+                console.log(response);
                 this.props.agregarDatos(response.data.cuentas, response.data.errores);
                 this.setState({
                     resultado: true,
@@ -84,7 +84,7 @@ class Cuentas extends Component{
                     {info}
                 </Modal>
                 <div className={classes.Principal}>
-                    <form>
+                    <form className={classes.Form}>
                         <div className={classes.Input} >
                             <label className={classes.Label}>Nro Cliente</label>
                             <input type="text" className={classes.InputElement} value={this.state.cliente} onChange={(event) => this.setState({cliente: event.target.value})} />
