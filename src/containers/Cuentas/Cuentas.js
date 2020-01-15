@@ -15,7 +15,8 @@ class Cuentas extends Component{
         cargando: false,
         archivo: null,
         resultado: false,
-        link: ''
+        link: '',
+        error: false,
         
     }
 
@@ -32,7 +33,7 @@ class Cuentas extends Component{
         this.setState({cargando: true});
         axios.post('/generarAltaCuenta', formData)
             .then(response =>{
-                console.log(response);
+                
                 this.props.agregarDatos(response.data.cuentas, response.data.errores);
                 this.setState({
                     resultado: true,
@@ -41,14 +42,22 @@ class Cuentas extends Component{
                 });
             })
             .catch(error =>{
-                console.log(axios.getUri());
+                this.setState({
+                    cargando:false,
+                    error: true,
+                })
             })
     }
 
 
 
     modalHandler = () =>{
-        this.setState({resultado: false});
+        if(this.state.resultado){
+            this.setState({resultado: false});    
+        }
+        else if(this.state.error){
+            this.setState({error: false});
+        }
         return false;
     }
 
@@ -82,6 +91,9 @@ class Cuentas extends Component{
                 </Modal>
                 <Modal show={this.state.resultado} modalClosed={this.modalHandler}>
                     {info}
+                </Modal>
+                <Modal show={this.state.error} modalClosed={this.modalHandler}>
+                    <h3>Hubo un error al procesar lo solicitado</h3>
                 </Modal>
                 <div className={classes.Principal}>
                     <form className={classes.Form}>

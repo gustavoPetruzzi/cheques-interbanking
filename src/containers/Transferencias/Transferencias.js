@@ -17,7 +17,8 @@ class Transferencias extends Component{
         archivo: null,
         resultado: false,
         info: null,
-        tipo: 'sueldos'
+        tipo: 'sueldos',
+        error: false,
         
     }
 
@@ -46,8 +47,10 @@ class Transferencias extends Component{
                 });
             })
             .catch(error =>{
-                console.log(error);
-                console.log(axios.getUri());
+                this.setState({
+                    cargando:false,
+                    error: true,
+                })
             })
         }
         else if(this.state.tipo === 'proveedores'){
@@ -70,8 +73,14 @@ class Transferencias extends Component{
 
 
     modalHandler = () =>{
-        this.setState({resultado: false});
+        if(this.state.resultado){
+            this.setState({resultado: false});    
+        }
+        else if(this.state.error){
+            this.setState({error: false});
+        }
         return false;
+    
     }
 
 
@@ -106,11 +115,14 @@ class Transferencias extends Component{
                 <Modal show={this.state.resultado} modalClosed={this.modalHandler}>
                     {info}
                 </Modal>
+                <Modal show={this.state.error} modalClosed={this.modalHandler}>
+                    <h3>Hubo un error al procesar lo solicitado</h3>
+                </Modal>
                 <div className={classes.Principal}>
                     <form className={classes.Form}>
                         <div className={classes.Input} >
                             <label className={classes.Label}>Cbu</label>
-                            <input type="text" className={classes.InputElement} value={this.state.cbu} onChange={(event) => this.setState({cliente: event.target.value})} />
+                            <input type="text" className={classes.InputElement} value={this.state.cbu} onChange={(event) => this.setState({cbu: event.target.value})} />
                         </div>
                         <div className={classes.Input}>
                             <label className={classes.Label}>Seleccione el tipo de transferencia:</label>
